@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>fitness</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{1b356688-8e7f-482b-a63f-fcde6fb0b728}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>fitness</RootNamespace>
+    <AssemblyName>fitness</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Visits_1.sql" />
+    <Build Include="dbo\Tables\Version_1.sql" />
+    <Build Include="dbo\Tables\UserVisits_1.sql" />
+    <Build Include="dbo\Tables\Users_1.sql" />
+    <Build Include="dbo\Tables\UserRate_1.sql" />
+    <Build Include="dbo\Tables\UserAdministrator_1.sql" />
+    <Build Include="dbo\Tables\Suppliers_1.sql" />
+    <Build Include="dbo\Tables\ServiceSales_1.sql" />
+    <Build Include="dbo\Tables\Services_1.sql" />
+    <Build Include="dbo\Tables\ServicePriceDynamic_1.sql" />
+    <Build Include="dbo\Tables\Security_1.sql" />
+    <Build Include="dbo\Tables\Sales_1.sql" />
+    <Build Include="dbo\Tables\Products_1.sql" />
+    <Build Include="dbo\Tables\ProductPriceDynamic_1.sql" />
+    <Build Include="dbo\Tables\ProductGroup_1.sql" />
+    <Build Include="dbo\Tables\Prices_1.sql" />
+    <Build Include="dbo\Tables\PriceDynamic_1.sql" />
+    <Build Include="dbo\Tables\Inquries_1.sql" />
+    <Build Include="dbo\Tables\InquiryDetails_1.sql" />
+    <Build Include="dbo\Tables\DocumentType_1.sql" />
+    <Build Include="dbo\Tables\Dimensions_1.sql" />
+    <Build Include="dbo\Tables\DeletingLog_1.sql" />
+    <Build Include="dbo\Tables\Components_1.sql" />
+    <Build Include="dbo\Tables\CoachesAbonements_1.sql" />
+    <Build Include="dbo\Tables\Coaches_1.sql" />
+    <Build Include="dbo\Tables\ClientTypes_1.sql" />
+    <Build Include="dbo\Tables\ClientsAbonements_1.sql" />
+    <Build Include="dbo\Tables\Clients_1.sql" />
+    <Build Include="dbo\Tables\Charges_1.sql" />
+    <Build Include="dbo\Tables\ChargeGroup_1.sql" />
+    <Build Include="dbo\Tables\Boxes_1.sql" />
+    <Build Include="dbo\Tables\Barcodes_1.sql" />
+    <Build Include="dbo\Tables\ArrivalDetails_1.sql" />
+    <Build Include="dbo\Tables\Arrival_1.sql" />
+    <Build Include="dbo\Tables\AdvertisingSource_1.sql" />
+    <Build Include="dbo\Tables\Administrators_1.sql" />
+    <Build Include="dbo\Tables\AccessRoles_1.sql" />
+    <Build Include="dbo\Tables\Abonements_1.sql" />
+    <Build Include="dbo\Tables\AbonementPriceDynamic_1.sql" />
+    <Build Include="dbo\Tables\AbonementIncome_1.sql" />
+    <Build Include="dbo\Views\v_Clients_1.sql" />
+    <Build Include="dbo\Views\UserIncome_1.sql" />
+    <Build Include="dbo\Views\Declines_1.sql" />
+    <Build Include="dbo\Views\Cash_1.sql" />
+    <Build Include="Security\fuser_1.sql" />
+    <Build Include="Security\fitness-test_1.sql" />
+    <Build Include="Security\fitness_user_1.sql" />
+    <Build Include="Security\fitness_2.sql" />
+    <Build Include="Security\fit_1.sql" />
+    <Build Include="Security\f_user_1.sql" />
+    <Build Include="Security\Admins_1.sql" />
+    <Build Include="Security\RoleMemberships_1.sql" />
+    <Build Include="Security\RoleMemberships_2.sql" />
+    <Build Include="Security\RoleMemberships_3.sql" />
+    <Build Include="Security\RoleMemberships_4.sql" />
+    <Build Include="Security\RoleMemberships_5.sql" />
+    <Build Include="Security\RoleMemberships_6.sql" />
+    <Build Include="Security\RoleMemberships_7.sql" />
+    <Build Include="dbo\Functions\GetServicePrice_1.sql" />
+    <Build Include="dbo\Functions\GetProductPrice_1.sql" />
+    <Build Include="dbo\Functions\GetAbonementPrice_1.sql" />
+    <Build Include="dbo\Stored Procedures\Clients_GetListByName_1.sql" />
+    <Build Include="dbo\Stored Procedures\Clients_GetListByBarcode_1.sql" />
+    <Build Include="dbo\Stored Procedures\Clients_GetList_1.sql" />
+    <Build Include="Security\fitness_3.sql" />
+  </ItemGroup>
+</Project>
