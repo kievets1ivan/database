@@ -4,26 +4,25 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>superStore</Name>
+    <Name>Database1</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{c0ea2cc9-4a05-45f0-a946-bbec8354c015}</ProjectGuid>
+    <ProjectGuid>{7f9d4714-549e-4d8e-8fe2-f26bb03df3ae}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>superStore</RootNamespace>
-    <AssemblyName>superStore</AssemblyName>
+    <RootNamespace>Database1</RootNamespace>
+    <AssemblyName>Database1</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <GenerateCreateScript>True</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -60,17 +59,19 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\State.sql" />
-    <Build Include="dbo\Tables\ShipType.sql" />
-    <Build Include="dbo\Tables\Sales.sql" />
-    <Build Include="dbo\Tables\Region.sql" />
     <Build Include="dbo\Tables\Product.sql" />
-    <Build Include="dbo\Tables\Orders_.sql" />
-    <Build Include="dbo\Tables\Order.sql" />
-    <Build Include="dbo\Tables\Customer.sql" />
-    <Build Include="dbo\Tables\City.sql" />
-    <Build Include="dbo\Tables\Address.sql" />
+    <Build Include="dbo\Tables\Price.sql" />
+    <Build Include="dbo\Tables\Description.sql" />
+    <Build Include="dbo\Tables\CategoryProductMix.sql" />
+    <Build Include="dbo\Tables\Category.sql" />
+    <Build Include="dbo\Views\ProductInfo.sql" />
+    <Build Include="dbo\Functions\SelectCategories.sql" />
+    <Build Include="dbo\Functions\GetPrice.sql" />
+    <Build Include="dbo\Stored Procedures\GetProductInfo.sql" />
   </ItemGroup>
 </Project>

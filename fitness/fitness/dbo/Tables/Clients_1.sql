@@ -15,6 +15,8 @@
 );
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [IX_DocumentType]
     ON [dbo].[Clients]([DocumentId] ASC);
@@ -39,3 +41,35 @@ GO
 CREATE NONCLUSTERED INDEX [IX_AdvertisingType]
     ON [dbo].[Clients]([SourceId] ASC);
 
+
+GO
+
+CREATE TRIGGER [dbo].[Action_Instead] 
+	ON [dbo].[Clients]
+	INSTEAD OF DELETE, INSERT, UPDATE
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @ActionType nvarchar(10)
+
+	IF NOT EXISTS (SELECT * FROM deleted) AND EXISTS (SELECT * FROM inserted)
+      BEGIN
+         SET @ActionType = 'Insert'
+      END
+
+   IF EXISTS (SELECT * FROM deleted) AND EXISTS (SELECT * FROM inserted)
+      BEGIN
+         SET @ActionType = 'Update'
+      END
+
+   IF EXISTS (SELECT * FROM deleted) AND NOT EXISTS (SELECT * FROM inserted)
+      BEGIN
+         SET @ActionType = 'Delete'
+      END
+
+    EXEC dbo.Add_Row_To_DeletingLog @ActionType
+
+END

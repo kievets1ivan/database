@@ -130,7 +130,12 @@
     <Build Include="dbo\Stored Procedures\Clients_GetListByBarcode_1.sql" />
     <Build Include="dbo\Stored Procedures\Clients_GetList_1.sql" />
     <Build Include="Security\fitness_3.sql" />
-    <Build Include="dbo\Tables\Department.sql" />
-    <Build Include="dbo\Tables\Employee.sql" />
+    <Build Include="dbo\Views\SalesProductView.sql" />
+    <Build Include="dbo\Views\ClientsView.sql" />
+    <Build Include="dbo\Functions\ConvertString.sql" />
+    <Build Include="dbo\Functions\CalcCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\GetCompleteClientsAbonements.sql" />
+    <Build Include="dbo\Stored Procedures\CurrentClients.sql" />
+    <Build Include="dbo\Stored Procedures\Add_Row_To_DeletingLog.sql" />
   </ItemGroup>
 </Project>
